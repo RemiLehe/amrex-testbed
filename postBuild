@@ -11,3 +11,9 @@ export CXX=x86_64-conda_cos6-linux-gnu-g++
 export FC=x86_64-conda_cos6-linux-gnu-gfortran
 cmake .. -DBUILD_SHARED_LIBS=ON -DENABLE_MPI=OFF
 make install
+
+cd ../Docs/Doxygen
+sed -i 's/GENERATE_TAGFILE       =/GENERATE_TAGFILE = amrex.tag/' doxygen.conf
+doxygen doxygen.conf
+cp amrex.tag /srv/conda/envs/notebook/share/xeus-cling/tagfiles/
+mv ~/amrex.json /srv/conda/envs/notebook/etc/xeus-cling/tags.d/

@@ -5,5 +5,3 @@ cd amrex
 git checkout development
 mkdir builddir
 cd builddir
-cmake .. -DBUILD_SHARED_LIBS=ON -DENABLE_MPI=OFF
-make install

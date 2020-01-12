@@ -5,3 +5,9 @@ cd amrex
 git checkout development
 mkdir builddir
 cd builddir
+
+export CC=x86_64-conda_cos6-linux-gnu-gcc
+export CXX=x86_64-conda_cos6-linux-gnu-g++
+export FC=x86_64-conda_cos6-linux-gnu-gfortran
+cmake .. -DBUILD_SHARED_LIBS=ON -DENABLE_MPI=OFF
+make install
